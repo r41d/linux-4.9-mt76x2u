@@ -51,7 +51,7 @@
 #include "mt76x2_mac.h"
 #include "mt76x2_dfs.h"
 
-DECLARE_EWMA(signal, 10, 8)
+//DECLARE_EWMA(signal, 10, 8)
 
 struct mt76x2_mcu {
 	struct mutex mutex;
@@ -159,7 +159,7 @@ struct mt76x2_sta {
 	struct mt76x2_tx_status status;
 	int n_frames;
 
-	struct ewma_signal rssi;
+	struct ewma_signal *rssi;
 	int inactive_count;
 };
 

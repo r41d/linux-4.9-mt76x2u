@@ -541,7 +541,7 @@ int mt76u_skb_dma_info(struct sk_buff *skb, int port, u32 flags)
 	}
 
 	if (unlikely(pad)) {
-		if (__skb_pad(last, pad, true))
+		if (skb_pad(last, pad))
 			return -ENOMEM;
 		__skb_put(last, pad);
 	}
